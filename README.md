@@ -1,133 +1,92 @@
 # Llaguno_Daryl_ShoppingCartActivity
 
-Daryl James M. Llaguno 
+Daryl James M. Llaguno
 
-“ Shopping Cart System “
+Shopping Cart System (with the use of Get and Set accessors)
 
-A console-based shopping cart application built in C# with product browsing, cart management, payment validation, and order history.
+A console-based shopping cart application built in C# that demonstrates encapsulation through properties with get and set accessors. The system features product browsing, cart management, payment validation, and order history tracking.
+
+Key Programming Concept: Properties with Get and Set Accessors
+
+All class data is properly encapsulated using auto-implemented properties ({ get; set; }), ensuring controlled access to object state:
+
+ • Product class: Id, Name, Price, RemainingStock, Category
+ • Cartitem class: Product, Quantity, Subtotal
+ • Order class: ReceiptNumber, OrderDate, Items, GrandTotal, Discount, FinalTotal, Payment, Change
 
 Features:
 
- Part 1: Basic Features
+Part 1: Basic Features
 
-- Browse products with stock display
-- Add items to cart with quantity selection
-- Automatic stock deduction
-- Receipt generation with grand total
-- 10% discount applied when total reaches PHP 5,000
+ • Browse products with stock display
+   — View all available items with live stock counts
+ • Add items to cart with quantity selection
+  — Select products and specify how many to purchase
+ • Automatic stock deduction 
+  — Inventory updates immediately when items are added to cart
+ • Receipt generation with grand total 
+  — Itemized receipt with full pricing breakdown
+ • 10% discount applied when total reaches PHP 5,000 — Automatic discount calculation at checkout
 
-  Part 2: Enhanced Features
+Part 2: Enhanced Features
 
-1. Cart Management Menu
+Cart Management Menu!!!
 
 Manage your cart before checkout with a dedicated menu:
 
-- View Cart - See all items, quantities, prices, and subtotals
-- Remove Item - Delete a specific item from cart (stock restored)
-- Update Quantity - Change item quantity (stock adjusts automatically)
-- Clear Cart - Empty entire cart and restore all stock
-- Checkout - Proceed to payment and receipt generation
+ • View Cart — See all items, quantities, prices, and subtotals
+ • Remove Item — Delete a specific item from cart (stock restored automatically)
+ • Update Quantity — Change item quantity (stock adjusts automatically via property updates)
+ • Clear Cart — Empty entire cart and restore all stock
+ • Checkout — Proceed to payment and receipt generation
 
-2. Product Search
+Product Search!
 
 Search products by name with partial matching.
 
-Example:
-Enter product name to search: mouse
-Result:
-3 Mouse - PHP 350 [Electronics] - Stock: 15
-5 Wireless Mouse - PHP 500 [Electronics] - Stock: 10
-
-3. Product Categories
-
+Product Categories
 Products are organized by category:
-
-- Electronics
-- Food
-- Clothing
+ • Electronics
+ • Food
+ • Clothing
 
 Filter the store menu to show only products from a selected category.
 
- 4. Stock Reorder Alert
+Stock Reorder Alert!!
 
 After checkout, automatically displays products running low.
 
-Example:
+Checkout Payment Validation:
 
-LOW STOCK ALERT:
-Webcam has only 2 stocks left.
-Keyboard has only 1 stock left.
-
-Alert triggers when RemainingStock
-is less than or equal to 5.
-
- 5. Checkout Payment Validation
 Secure payment process:
+ • Payment must be numeric (re-prompts if letters entered)
+ • Payment must be greater than or equal to final total (re-prompts if insufficient)
+ • Automatically computes change
 
-- Payment must be numeric (re-prompts if letters entered)
-- Payment must be greater than or equal to final total (re-prompts if insufficient)
-- Automatically computes change
-
-Example:
-FINAL TOTAL: PHP 5200
-Enter payment: 5000
-Insufficient payment.
-
-Enter payment: 6000
-Change: PHP 800
-
-
-6. Receipt Number and Date
+Receipt Number and Date:
 
 Every receipt includes:
 
-- Auto-generated receipt number (0001, 0002, and so on)
-- Checkout date and time
-- Itemized list with quantities and prices
-- Grand total, discount, final total
-- Payment amount and change
+ • Auto-generated receipt number (0001, 0002, and so on)
+ • Checkout date and time
+ • Itemized list with quantities and prices
+ • Grand total, discount, final total
+ • Payment amount and change
 
-Example:
-================================
-RECEIPT #0001
-Date: April 24, 2026 8:30 PM
-================================
-Item               Qty   Price    Total
------------------------------------
-Monitor              2   PHP 550    PHP 1100
-Keyboard             1   PHP 450    PHP 450
------------------------------------
-GRAND TOTAL:  PHP 1550
------------------------------------
-FINAL TOTAL:  PHP 1550
-PAYMENT:      PHP 2000
-CHANGE:       PHP 450
-===================================
-
-7. Order History
+Order History:
 
 All completed transactions are stored during the program run.
 
-Example:
-ORDER HISTORY
-Receipt #0001 - Final Total: PHP 5200
-Receipt #0002 - Final Total: PHP 1800
-
 View full receipt details by entering the receipt number!
 
- 8. Better Input Validation
+Better Input Validation:
 
 All user inputs are strictly validated:
 
-- Menu choices: only valid numbers accepted
-- Y/N prompts: re-prompt until Y or N entered
-- Quantities: must be positive numbers
-- Product IDs: must exist in store
-
-Example:
-Add another item? (Y/N): maybe
-Invalid input. Please enter Y or N only.
-Add another item? (Y/N):
+ • Menu choices: only valid numbers accepted
+ • Y/N prompts: re-prompt until Y or N entered
+ • Quantities: must be positive numbers
+ • Product IDs: must exist in store
 
 How do you run this?
 
